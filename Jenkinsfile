@@ -6,7 +6,7 @@ pipeline{
             args '-v /var/run/docker.sock:/var/run/docker.sock' // Mount Docker socket
         }
         }
-    }
+    
     stages{
         stage('Checkout scm'){
             steps{
