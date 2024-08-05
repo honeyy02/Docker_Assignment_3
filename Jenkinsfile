@@ -42,6 +42,14 @@ pipeline{
                 }
             }
         }
+        stage("Copy volume to Jenkins workspace") {
+            steps {
+                script {
+                    // Create a temporary container to access the volume
+                    sh 'docker run --rm -v my-volume:/volume -v $WORKSPACE:/workspace alpine sh -c "cp -r /volume/* /workspace/"'
+                }
+            }
+        }
 
     }
 }
