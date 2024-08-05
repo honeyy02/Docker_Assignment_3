@@ -38,7 +38,7 @@ pipeline{
         stage("Run the image with container"){
             steps{
                 script{
-                    sh 'docker run --name my-maven-app:v2 -d -p 8080:8080 -v my-volume:/app/target maven-app'
+                    sh 'docker run --name my-maven-appv2 -d -p 8080:8080 -v my-volume:/app/target maven-app'
                 }
             }
         }
