@@ -2,7 +2,6 @@ pipeline{
     agent{
         docker{
             image 'maven:3.8.1-jdk-11'
-            image 'docker:latest' // Use an image with Docker installed
             args '-v /var/run/docker.sock:/var/run/docker.sock' // Mount Docker socket
         }
         }
