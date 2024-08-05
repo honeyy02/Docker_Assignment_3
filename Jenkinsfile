@@ -10,6 +10,11 @@ pipeline{
                 checkout scm
             }
         }
+        stage('Check docker '){
+            steps{
+                sh 'docker --version'
+            }
+        }
         stage('Build the maven project'){
             steps{
                 sh 'mvn clean package'
