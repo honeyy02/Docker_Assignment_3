@@ -35,7 +35,7 @@ pipeline{
                 }
             }
             steps{
-                sh 'docker build -t maven-app .'
+                sh 'sudo docker build -t maven-app .'
             }
         }
         stage('Create volume'){
@@ -46,7 +46,7 @@ pipeline{
                 }
             }
             steps{
-                sh 'docker volume create my-volume'
+                sh 'sudo docker volume create my-volume'
             }
         }
         stage('Run the docker image'){
@@ -57,7 +57,7 @@ pipeline{
                 }
             }
             steps{
-                sh 'docker run --name my-maven-app -d -p 8080:8080 -v my-volume:app/targer maven-app '
+                sh 'sudo docker run --name my-maven-app -d -p 8080:8080 -v my-volume:app/targer maven-app '
             }
         }
         
